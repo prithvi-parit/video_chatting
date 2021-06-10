@@ -11,3 +11,6 @@ while True:
         ret, photo = c.read()
         value = cv2.imencode('.jpg', photo)[1].tostring()
         s.sendall(value)
+        cv2.imshow('client-sending-video',photo)
+        cv2.waitKey(10)
+    cv2.destroyAllWindows()
